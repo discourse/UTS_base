@@ -1,0 +1,70 @@
+$top_header_background: rgb(245, 245, 245);
+
+.adsense-topic-list-top,
+.adsense-topic-above-post-stream,
+.dfp-ad-topic-list-top,
+.dfp-ad-topic-above-post-stream {
+  position: relative;
+  padding: 3em 0 1em 0;
+  margin-bottom: 1em;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 140%;
+    top: -20%;
+    width: 150vw;
+    left: -50vw;
+    background: $top_header_background;
+    z-index: 0;
+  }
+
+  .google-adsense-label,
+  .google-dfp-ad-label,
+  .dfp-ad-unit {
+    z-index: 1;
+    position: relative;
+  }
+}
+
+// resets
+.google-adsense,
+.google-dfp-ad {
+  .google-adsense-label,
+  .google-dfp-ad-label {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+.topic-post {
+  .widget-connector {
+    padding-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .desktop-view & {
+      $topic-avatar-width: 45px;
+      width: #{$topic-body-width + ($topic-body-width-padding * 2) +
+        $topic-avatar-width};
+    }
+  }
+}
+
+.google-dfp-ad.dfp-ad-post-bottom {
+  padding: 0 $topic-body-width-padding;
+  .google-dfp-ad-label,
+  .dfp-ad-unit {
+    margin: 0 !important;
+  }
+}
+
+// tmp demo
+.google-adsense-content,
+#div-gpt-ad-topic-above-post-stream,
+#div-gpt-ad-topic-list-top,
+#div-gpt-ad-topic-above-suggested,
+[id*="div-gpt-ad-post-bottom-"],
+.dfp-ad-unit {
+  border: 1px solid $tertiary;
+}

@@ -1,0 +1,22 @@
+.owl-next,
+.owl-prev {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.feed-nav-wrapper {
+  color: $tertiary;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  &.disabled {
+    display: none;
+  }
+  font-size: 2em;
+  margin-bottom: -0.75em;
+}
+
+.owl-carousel .owl-stage {
+  padding-bottom: 0.25em;
+}

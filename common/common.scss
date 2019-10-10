@@ -1,0 +1,44 @@
+@import "common/artcile-feed";
+@import "common/carousel";
+@import "common/ads";
+
+html {
+  font-family: "Open Sans", sans-serif;
+}
+
+.d-header {
+  box-shadow: none;
+  border-bottom: 2px solid $tertiary;
+}
+
+.list-controls {
+  .nav-pills {
+    > li {
+      > a {
+        color: $primary;
+        transition: all 0.15s;
+        font-size: $font-up-1;
+        position: relative;
+        border: 1px solid transparent;
+        font-weight: bold;
+
+        &:hover {
+          color: $tertiary;
+          background-color: transparent;
+          border-color: $tertiary;
+        }
+      }
+
+      a.active {
+        color: $tertiary;
+        background-color: transparent;
+        border-color: $tertiary;
+      }
+    }
+  }
+}
+
+.alert-too-few-topics,
+.alert-bootstrap-mode {
+  display: none;
+}
