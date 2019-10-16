@@ -6,6 +6,11 @@ html {
   font-family: "Open Sans", sans-serif;
 }
 
+body {
+  max-width: 100%;
+  overflow: hidden auto;
+}
+
 .d-header {
   box-shadow: none;
   border-bottom: 2px solid $tertiary;
