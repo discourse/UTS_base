@@ -41,11 +41,12 @@ export default Ember.Component.extend({
 
       console.log(feedItem);
 
-      let hasMedia = feedItem._embedded["wp:featuredmedia"] ? true : false;
+      let media =
+        feedItem._embedded["wp:featuredmedia"].firstObject ||
+        feedItem._embedded["wp:featuredmedia"].get("firstObject") ||
+        null;
 
-      let media = feedItem._embedded["wp:featuredmedia"]["0"]
-        ? feedItem._embedded["wp:featuredmedia"]["0"]
-        : false;
+      if (!media) return;
 
       article.title = feedItem.title.rendered;
 
