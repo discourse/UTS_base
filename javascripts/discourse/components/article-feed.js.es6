@@ -92,5 +92,6 @@ export default Ember.Component.extend({
   refreshCache() {
     this.set("args", "");
     this.site._articleFeed = "";
+    this.init();
   }
 });
