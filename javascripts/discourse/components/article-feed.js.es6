@@ -39,29 +39,24 @@ export default Ember.Component.extend({
 
       const feedItem = feed[i];
 
-      const shouldRender = feedItem._embedded["wp:featuredmedia"].firstObject
-        .source_url
-        ? true
+      const media = feedItem._embedded["wp:featuredmedia"].firstObject;
+
+      article.title = feedItem.title.rendered ? feedItem.title.rendered : false;
+
+      article.thumbnail = media.source_url
+        ? media.source_url + settings.thumbnail_size
         : false;
 
-      console.log(shouldRender);
+      article.thumbnailTitle = media.title ? media.title.rendered : false;
 
-      console.log(
-        feedItem._embedded["wp:featuredmedia"].firstObject.source_url
-      );
+      article.link = feedItem.link ? feedItem.link : false;
 
-      if (shouldRender) {
-        article.title = feedItem.title.rendered;
-
-        article.thumbnail =
-          feedItem._embedded["wp:featuredmedia"].firstObject.source_url +
-          settings.thumbnail_size;
-
-        article.thumbnailTitle =
-          feedItem._embedded["wp:featuredmedia"].firstObject.title.rendered;
-
-        article.link = feedItem.link ? feedItem.link : false;
-
+      if (
+        article.link &&
+        article.thumbnailTitle &&
+        article.thumbnail &&
+        article.title
+      ) {
         articles.push(article);
       }
     }
