@@ -44,6 +44,12 @@ export default Ember.Component.extend({
         ? true
         : false;
 
+      console.log(shouldRender);
+
+      console.log(
+        feedItem._embedded["wp:featuredmedia"].firstObject.source_url
+      );
+
       if (shouldRender) {
         article.title = feedItem.title.rendered;
 
