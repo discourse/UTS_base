@@ -38,10 +38,10 @@ export default Ember.Component.extend({
       const article = [];
 
       const feedItem = feed[i];
+      
+      log(feedItem)
 
-      console.log(feedItem._embedded["wp:featuredmedia"]);
-
-      const hasMedia = feedItem._embedded['wp:featuredmedia']['0'].source_url
+      const hasMedia = feedItem._embedded['wp:featuredmedia']
         ? true
         : false;
 
