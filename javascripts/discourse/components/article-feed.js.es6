@@ -57,7 +57,7 @@ export default Ember.Component.extend({
       this.carousel();
     });
 
-    Ember.run.later(() => this.refreshCache(), TIMEOUT);
+    Ember.run.later(() => this.refreshCache(), 5000);
   },
 
   carousel() {
