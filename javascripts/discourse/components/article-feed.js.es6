@@ -39,6 +39,8 @@ export default Ember.Component.extend({
 
       const feedItem = feed[i];
 
+      console.log(feedItem._embedded["wp:featuredmedia"]);
+
       const hasMedia = feedItem._embedded["wp:featuredmedia"][0].length
         ? true
         : false;
