@@ -39,12 +39,13 @@ export default Ember.Component.extend({
 
       const feedItem = feed[i];
 
-      if (!feedItem._embedded["wp:featuredmedia"]) return;
-      
-      console.log(i);
+      if (feedItem._embedded["wp:featuredmedia"]) {
+        
+        console.log(i);
       console.log(feedItem._embedded["wp:featuredmedia"]);
 
-      let media = feedItem._embedded["wp:featuredmedia"][0];
+        
+        let media = feedItem._embedded["wp:featuredmedia"][0];
 
       article.title = feedItem.title.rendered;
 
@@ -55,6 +56,10 @@ export default Ember.Component.extend({
       article.link = feedItem.link;
 
       articles.push(article);
+      };
+      
+      
+      
     }
 
     this.set("args", { articles: articles });
