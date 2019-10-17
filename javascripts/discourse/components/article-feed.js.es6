@@ -38,6 +38,8 @@ export default Ember.Component.extend({
       const article = [];
 
       const feedItem = feed[i];
+      
+      console.log(feedItem._embedded["wp:featuredmedia"]);
 
       const media = feedItem._embedded["wp:featuredmedia"].firstObject
         ? feedItem._embedded["wp:featuredmedia"].firstObject
