@@ -38,37 +38,26 @@ export default Ember.Component.extend({
       const article = [];
 
       const feedItem = feed[i];
-      
-      console.log(feedItem)
 
-      const hasMedia = feedItem._embedded['wp:featuredmedia']
-        ? true
-        : false;
+      console.log(feedItem);
+
+      const hasMedia = feedItem._embedded["wp:featuredmedia"] ? true : false;
 
       if (!hasMedia) return;
 
-      const media = feedItem._embedded['wp:featuredmedia']['0']
-        ? feedItem._embedded['wp:featuredmedia']['0']
+      const media = feedItem._embedded["wp:featuredmedia"]["0"]
+        ? feedItem._embedded["wp:featuredmedia"]["0"]
         : false;
 
-      article.title = feedItem.title.rendered || false;
+      article.title = feedItem.title.rendered;
 
-      article.thumbnail = media.source_url
-        ? media.source_url + settings.thumbnail_size
-        : false;
+      article.thumbnail = media.source_url + settings.thumbnail_size;
 
-      article.thumbnailTitle = media.title || false;
+      article.thumbnailTitle = media.title;
 
-      article.link = feedItem.link || false;
+      article.link = feedItem.link;
 
-      if (
-        article.link &&
-        article.thumbnailTitle &&
-        article.thumbnail &&
-        article.title
-      ) {
-        articles.push(article);
-      }
+      articles.push(article);
     }
 
     this.set("args", { articles: articles });
