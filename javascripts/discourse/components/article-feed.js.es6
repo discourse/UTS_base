@@ -45,6 +45,8 @@ export default Ember.Component.extend({
         feedItem._embedded["wp:featuredmedia"].firstObject ||
         feedItem._embedded["wp:featuredmedia"].get("firstObject") ||
         null;
+      
+      console.log(media);
 
       if (!media) return;
 
