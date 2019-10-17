@@ -37,17 +37,17 @@ export default Ember.Component.extend({
     for (i = 0; i < feed.length; ++i) {
       const article = [];
 
-      // debug
+      const feedItem = feed[i];
 
-      console.log(feed[i]);
+      console.log(feedItem);
 
-      article.title = feed[i].title.rendered;
+      article.title = feedItem.title.rendered;
       article.thumbnail =
-        feed[i]._embedded["wp:featuredmedia"].firstObject.source_url +
+        feedItem._embedded["wp:featuredmedia"].firstObject.source_url +
         settings.thumbnail_size;
       article.thumbnailTitle =
-        feed[i]._embedded["wp:featuredmedia"].firstObject.title.rendered;
-      article.link = feed[i].link;
+        feedItem._embedded["wp:featuredmedia"].firstObject.title.rendered;
+      article.link = feedItem.link;
       articles.push(article);
     }
 
