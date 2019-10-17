@@ -47,14 +47,16 @@ export default Ember.Component.extend({
       console.log(article.title);
 
       article.thumbnail = feedItem._embedded["wp:featuredmedia"].firstObject
+        .source_url
         ? feedItem._embedded["wp:featuredmedia"].firstObject.source_url +
           settings.thumbnail_size
         : false;
 
       console.log("thumbnail");
       console.log(article.thumbnail);
+
       article.thumbnailTitle = feedItem._embedded["wp:featuredmedia"]
-        .firstObject
+        .firstObject.title
         ? feedItem._embedded["wp:featuredmedia"].firstObject.title.rendered
         : false;
 
