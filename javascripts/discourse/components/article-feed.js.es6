@@ -37,6 +37,10 @@ export default Ember.Component.extend({
     for (i = 0; i < feed.length; ++i) {
       const article = [];
 
+      // debug
+
+      console.log(feed[i]);
+
       article.title = feed[i].title.rendered;
       article.thumbnail =
         feed[i]._embedded["wp:featuredmedia"].firstObject.source_url +
