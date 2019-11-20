@@ -45,7 +45,7 @@ export default Ember.Component.extend({
 
         let media = feedItem._embedded["wp:featuredmedia"][0];
         article.thumbnail = media.source_url + settings.thumbnail_size;
-        article.thumbnailTitle = media.title.rendered;
+        article.thumbnailTitle = media.title.rendered || "";
 
         articles.push(article);
       }
