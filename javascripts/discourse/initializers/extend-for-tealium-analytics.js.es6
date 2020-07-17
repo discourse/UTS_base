@@ -13,7 +13,7 @@ export default {
 
       let appEvents = container.lookup("service:app-events");
 
-      loadScript("http://www.gannett-cdn.com/dcjs/prod/main.js").then(() => {
+      loadScript("https://www.gannett-cdn.com/dcjs/prod/main.js").then(() => {
         window.gciAnalytics.view({
           "event-type": "pageview"
         });
